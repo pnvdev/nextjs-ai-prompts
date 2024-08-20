@@ -6,7 +6,9 @@ type PromptData = {
 };
 
 export default async function Home() {
-  const res = await fetch(process.env.NEXT_PUBLIC_SHEET || "");
+  const res = await fetch(process.env.NEXT_PUBLIC_SHEET || "", {
+    cache: "no-store",
+  });
   const promts = await res.text();
 
   // Add a type guard to ensure valid data is returned
