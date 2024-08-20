@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 const Button = () => {
   const router = useRouter();
   const handleAnotherPrompt = () => {
-    console.log("handleAnotherPrompt");
     router.refresh();
   };
 
