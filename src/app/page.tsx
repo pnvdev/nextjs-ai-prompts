@@ -1,5 +1,5 @@
 import parse from "@/utils/parse";
-
+import Button from "@/components/Button";
 type PromptData = {
   act: string;
   prompt: string;
@@ -33,6 +33,7 @@ export default async function Home() {
       <p className="mb-6 text-xl font-normal text-gray-500 dark:text-gray-400 text-justify">
         {data[randomKey]?.prompt || "No prompt available"}
       </p>
+      <Button />
     </main>
   );
 }
