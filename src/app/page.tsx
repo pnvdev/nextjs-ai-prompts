@@ -1,5 +1,7 @@
 import parse from "@/utils/parse";
 import Button from "@/components/Button";
+import CopyClipboard from "@/components/CopyClipboard";
+
 type PromptData = {
   act: string;
   prompt: string;
@@ -23,16 +25,19 @@ export default async function Home() {
   const randomKey = Math.floor(Math.random() * data.length);
 
   return (
-    <main className="container m-auto flex min-h-screen flex-col items-center justify-start p-20 max-[640px]:p-10 font-mono">
-      <h1 className="mb-20 max-[640px]:mb-10 text-7xl max-[640px]:text-6xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white text-center">
+    <main className="container m-auto flex min-h-screen flex-col items-center justify-start p-10 pb-20 max-[1024px]:p-10 font-mono">
+      <h1 className="mb-10 max-[640px]:mb-10 text-7xl max-[640px]:text-6xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white text-center">
         AI Prompts
       </h1>
-      <p className="mb-16 max-[640px]:mb-10 text-2xl font-normal text-gray-500 lg:text-4xl dark:text-gray-400 text-center">
-        {data[randomKey]?.act || "No activity available"}
-      </p>
-      <p className="mb-6 text-xl font-normal text-gray-500 dark:text-gray-400 text-justify">
-        {data[randomKey]?.prompt || "No prompt available"}
-      </p>
+      <div className="relative w-full pt-10">
+        <CopyClipboard text={JSON.stringify(data[randomKey])} />
+        <p className="mb-16 max-[640px]:mb-10 text-2xl font-normal text-gray-500 lg:text-4xl dark:text-gray-400 text-center">
+          {data[randomKey]?.act || "No activity available"}
+        </p>
+        <p className="mb-6 text-xl font-normal text-gray-500 dark:text-gray-400 text-justify">
+          {data[randomKey]?.prompt || "No prompt available"}
+        </p>
+      </div>
       <Button />
     </main>
   );
