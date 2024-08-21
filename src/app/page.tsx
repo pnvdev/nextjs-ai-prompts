@@ -23,7 +23,7 @@ export default async function Home() {
   const randomKey = Math.floor(Math.random() * data.length);
 
   return (
-    <main className="container m-auto flex min-h-screen flex-col items-center justify-start p-32 max-[640px]:p-10 font-mono">
+    <main className="container m-auto flex min-h-screen flex-col items-center justify-start p-20 max-[640px]:p-10 font-mono">
       <h1 className="mb-20 max-[640px]:mb-10 text-7xl max-[640px]:text-6xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white text-center">
         AI Prompts
       </h1>
